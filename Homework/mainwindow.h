@@ -22,8 +22,8 @@ private:
     int score = 0;
 
 private slots:
-   //void newGame();
-   //void cardClicked();
+   void newGame();
+   void cardFlip();
 };
 
-#endif // MAINWINDOW_H
+#endif

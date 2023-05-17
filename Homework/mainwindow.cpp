@@ -6,16 +6,17 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <iostream>
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     scoreLabel = new QLabel("Score :");
-    triesLabel = new QLabel("Number of tries remaining");
+    triesLabel = new QLabel("Number of tries remaining :");
     newGameButton = new QPushButton(tr("New Game "));
-    // TODO: there should be a connect button to check if the user clicked the new game
-    // to do this, restarting the game logic should be implemented
-
+    connect(newGameButton,SIGNAL(clicked()),this,SLOT(newGame()));
 
     // creates cards as ?
     for (int row = 0; row < 5; row++)
@@ -23,8 +24,9 @@ MainWindow::MainWindow(QWidget *parent)
         for (int column = 0; column < 6; column++)
         {
             cardButtons[row][column] = new QPushButton(tr("?"));
-            // TODO: connect function for clicking
-            // card flipping logic should be implemented before
+            cardButtons[row][column]->setProperty("row",row);
+            cardButtons[row][column]->setProperty("column",column);
+            connect(cardButtons[row][column],SIGNAL(clicked()),this,SLOT(cardFlip()));
         }
 
     }
@@ -39,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
 
-
     // the layout which is consisted of score and remaining try parts
     QHBoxLayout* top = new QHBoxLayout;
     top->addWidget(scoreLabel);
@@ -52,43 +53,23 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->addLayout(top);
     mainLayout->addLayout(middle);
 
-    // Set the main layout
-    QWidget *central = new QWidget(this);
-    central->setLayout(mainLayout);
-    setCentralWidget(central);
+    QWidget* gameWidget = new QWidget(this);
+    gameWidget->setLayout(mainLayout);
+    setCentralWidget(gameWidget);
 
     setWindowTitle(tr("Pairs"));
-
+    setFixedHeight(sizeHint().height());
 }
 
-void newGame()
+void MainWindow::newGame()
 {
     // TODO
+    cout << "stop";
 }
 
 
-void cardClicked()
+void MainWindow::cardFlip()
 {
+    cout << "flip";
     // TODO
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
