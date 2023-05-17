@@ -3,19 +3,27 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+class QLabel;
+class QPushButton;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    MainWindow(QWidget *parent = 0);
 
 private:
-    Ui::MainWindow *ui;
+    QLabel *scoreLabel;
+    QLabel *triesLabel;
+    QPushButton *newGameButton;
+    QPushButton *cardButtons[5][6];
+    int triesRemaining = 50;
+    int score = 0;
+
+private slots:
+   //void newGame();
+   //void cardClicked();
 };
+
 #endif // MAINWINDOW_H

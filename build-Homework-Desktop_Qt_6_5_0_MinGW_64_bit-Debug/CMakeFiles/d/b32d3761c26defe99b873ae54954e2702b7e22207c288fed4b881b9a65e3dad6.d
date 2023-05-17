@@ -587,5 +587,4 @@ Homework_autogen/timestamp: \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
   Homework_autogen/moc_predefs.h \
-  C:/Users/eraye/Desktop/Stuff/Workspace/Projects/Cmpe230/HW3/Homework/mainwindow.ui \
   C:/Qt/Tools/CMake_64/bin/cmake.exe
