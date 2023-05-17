@@ -1,0 +1,9 @@
+# ninja log v5
+3	1443	7060262543795231	Homework_autogen/timestamp	7881860ecbdc6d57
+3	1443	7060262543795231	Homework_autogen/mocs_compilation.cpp	7881860ecbdc6d57
+3	1443	7060262543795231	C:/Users/eraye/Desktop/Stuff/Workspace/Projects/Cmpe230/HW3/build-Homework-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/Homework_autogen/timestamp	7881860ecbdc6d57
+3	1443	7060262543795231	C:/Users/eraye/Desktop/Stuff/Workspace/Projects/Cmpe230/HW3/build-Homework-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/Homework_autogen/mocs_compilation.cpp	7881860ecbdc6d57
+1448	4366	7060262576075624	CMakeFiles/Homework.dir/Homework_autogen/mocs_compilation.cpp.obj	53616bff2a649318
+1444	4415	7060262576567415	CMakeFiles/Homework.dir/main.cpp.obj	44bb4f7f497dfbc0
+1455	4514	7060262577575524	CMakeFiles/Homework.dir/mainwindow.cpp.obj	4fd5ed3cd64f9937
+4515	4833	7060262580687813	Homework.exe	db115a54d8e7246e

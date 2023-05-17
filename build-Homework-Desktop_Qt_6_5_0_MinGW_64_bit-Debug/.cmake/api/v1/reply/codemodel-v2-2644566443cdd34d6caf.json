@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-98618cc93d25b48adc49.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Homework",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Homework::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Homework-Debug-6b3dbb714567f26064be.json",
+					"name" : "Homework",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Homework_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Homework_autogen-Debug-9a3d9fa5218d9eda4da3.json",
+					"name" : "Homework_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Homework_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Homework_autogen_timestamp_deps-Debug-6c53a0241737b5e25392.json",
+					"name" : "Homework_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/eraye/Desktop/Stuff/Workspace/Projects/Cmpe230/HW3/build-Homework-Desktop_Qt_6_5_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/eraye/Desktop/Stuff/Workspace/Projects/Cmpe230/HW3/Homework"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
