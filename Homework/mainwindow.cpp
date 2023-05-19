@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
             cardButtons[row][column]->setProperty("row",row);
             cardButtons[row][column]->setProperty("column",column);
             cardButtons[row][column]->setProperty("key",(31-counter)*counter);
+            cardButtons[row][column]->setProperty("state","closed");
             QObject::connect(cardButtons[row][column], &QPushButton::clicked, this, [this, row, column]() {
                 cardFlip(cardButtons[row][column]);
             });
@@ -81,12 +82,11 @@ void MainWindow::newGame()
     triesRemaining = 50;
     currentScore->setText(QString::number(score));
     currentTries->setText(QString::number(triesRemaining));
+
     vector<coordinate> usedPositions;
     coordinate currCoor;
     bool flag = true;
     int counter = 1;
-    int tempRow = 0;
-    int tempCol = 0;
 
     for (int row = 0;row < 5;row++)
     {
@@ -115,6 +115,7 @@ void MainWindow::newGame()
         for(int column = 0;column<6;column++)
         {
             cardButtons[row][column]->setText("?");
+            cardButtons[row][column]->setProperty("state","closed");
         }
     }
 
@@ -123,31 +124,43 @@ void MainWindow::newGame()
 
 void MainWindow::cardFlip(QPushButton* card)
 {
-    if(openCards == 0)
-    {
-        card->setText(card->property("key").toString());
-        openCards++;
-        openedCard = card;
-        return;
-    }
-    if(openCards == 1)
-    {
-        if(openedCard->property("key") == card->property(("key")))
-        {
+    if(card->property("state")=="closed"){
+        if(openCards == 0){
             card->setText(card->property("key").toString());
-            openCards = 0;
-            score += 2;
-            currentScore->setText(QString::number(score));
+            openCards++;
+            openedCard = card;
             return;
         }
-        openedCard->setText("?");
-        openCards = 0;
-        triesRemaining -=1;
-        currentTries->setText(QString::number(triesRemaining));
-        return;
+        if(openCards == 1){
+            if(card == openedCard){
+                return;
+            }
+
+            if(openedCard->property("key") == card->property(("key"))){
+                card->setText(card->property("key").toString());
+                openCards = 0;
+                score += 2;
+                currentScore->setText(QString::number(score));
+                triesRemaining -= 1;
+                currentTries->setText(QString::number(triesRemaining));
+                card->setProperty("state","opened");
+                openedCard->setProperty("state","opened");
+                return;
+            }
+            card->setText(card->property("key").toString());
+            triesRemaining -= 1;
+            currentTries->setText(QString::number(triesRemaining));
+            openCards ++;
+            // Schedule QTimer to close the cards after 1 second
+            QTimer::singleShot(1000, [this, card]() {
+                openedCard->setText("?");
+                card->setText("?");
+                openCards = 0;
+            });
+            return;
+        }
     }
     return;
-    // TODO
 }
 
 
