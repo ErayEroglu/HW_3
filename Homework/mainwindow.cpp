@@ -125,6 +125,10 @@ void MainWindow::newGame()
 void MainWindow::cardFlip(QPushButton* card)
 {
     if(card->property("state")=="closed"){
+
+        if (triesRemaining <= 0 || score >= 50)
+            newGame();
+
         if(openCards == 0){
             card->setText(card->property("key").toString());
             openCards++;
