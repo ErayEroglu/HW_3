@@ -126,7 +126,7 @@ void MainWindow::newGame()  // if player wants to restart the game, shuffles car
 
 void MainWindow::cardFlip(QPushButton* card)  // when player clickes a card, show its value
 {
-    if(card->property("state")=="closed" && triesRemaining > 0 && score < 50){  // the player can flip cards if s/he has a remaining try
+    if(card->property("state")=="closed" && triesRemaining > 0 && score < 30){  // the player can flip cards if s/he has a remaining try
         if(openCards == 0){                                                     // or there are closed cards
             card->setText(card->property("key").toString());
             openCards++;
